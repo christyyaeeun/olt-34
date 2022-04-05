@@ -1,0 +1,235 @@
+html, body {
+    margin: 0 auto;
+    padding: 0;
+}
+
+[data-amplify-authenticator] [data-amplify-container] {
+    place-self: center;
+
+
+}
+[data-amplify-authenticator] [data-amplify-router] {
+    border-radius: 10px !important;
+    overflow: hidden !important;
+}
+
+  
+  .amplify-button[data-variation="primary"] {
+    border-width: var(--amplify-components-button-primary-border-width);
+    /* background-color: #b9d3f3 !important; */
+    background: #b9c6f3 !important;
+    border-color: var(--amplify-components-button-primary-border-color);
+    color: var(--amplify-components-button-primary-color);
+  }
+  .amplify-tabs {
+    background-color: var(--amplify-components-tabs-background-color);
+    box-shadow: var(--amplify-components-tabs-box-shadow);
+    border-width: 0 0 var(--amplify-components-tabs-border-width) 0;
+    border-style: var(--amplify-components-tabs-border-style);
+    border-color: var(--amplify-components-tabs-border-color);
+    gap: var(--amplify-components-tabs-gap);
+    outline: none;
+    border-radius: 15px;
+    overflow: hidden;
+}
+  .amplify-tabs-item[data-state=active] {
+      color:#b4b6e2 !important;
+      border-color: #9ea1df!important;
+  }
+  .amplify-button[data-variation=link] {
+      color: #aac7ea !important;
+  }
+  .amplify-tabs-item {
+    color: #9aa6b1 !important;
+    font-weight: 500 !important;
+  }
+   .amplify-tabs-item[data-state=active] {
+    color:#7da1ff;
+    border-color: var(--amplify-components-tabs-item-active-border-color);
+    background-color: var(--amplify-components-tabs-item-active-background-color);
+} 
+
+#radix-\:r1\:-content-0 > div > div > form > div > fieldset > div.amplify-flex.amplify-field.amplify-textfield.amplify-passwordfield > div > div.amplify-field-group__outer-end > button > span {
+    color: #c7cedf !important;
+} 
+h3.amplify-heading {
+    font-size: large !important;
+    color: #53555a !important;
+}
+:root {
+    --header-size: var(--amplify-text-md) !important;
+    color: var(--header-color);
+    font-size: var(--header-size);
+    --amplify-font-family: "Amazon Ember", "Helvetica Neue", "Helvetica", "Arial",
+      sans-serif;
+    --amplify-components-tabs-item-active-border-color: #fef;
+    --amplify-components-tabs-item-active-background-color: #fef;
+    --amplify-components-tabs-item-active-color: #fef;
+    --amplify-text-xxs: 0.75rem;
+    --amplify-text-xs: 0.81rem;
+    --amplify-text-sm: 0.6rem;
+    --amplify-text-md: 1rem;
+    --amplify-text-md-sub: 1.15rem;
+    --amplify-text-lg: 1rem;
+    --amplify-text-xl: 2rem;
+    --amplify-text-xxl: 2.5rem;
+    --amplify-primary-color: #85c3ce;
+    --width: 80%;
+    /* #b9dde4; */
+    --amplify-primary-background-color: #abe3e7;
+    --amplify-primary-contrast: var(--amplify-white);
+    --amplify-primary-tint: #9ec6ce !important;
+    --amplify-primary-shade: #abe3e7 !important;
+    --amplify-secondary-color: #152939;
+    --amplify-secondary-contrast: var(--amplify-white);
+    --amplify-secondary-tint: #31465f;
+    --amplify-secondary-shade: #1f2a37;
+    --amplify-tertiary-color: #5d8aff;
+    --amplify-tertiary-contrast: var(--amplify-white);
+    --amplify-tertiary-tint: #7da1ff;
+    --amplify-tertiary-shade: #537be5;
+    --amplify-background-color: var(--amplify-white);
+    --amplify-grey: #828282;
+    --amplify-light-grey: #c4c4c4;
+    --amplify-white: #ffffff;
+    --amplify-smoke-white: #f5f5f5;
+    --amplify-red: #dd3f5b;
+    --amplify-blue: #099ac8;
+}
+
+.task-wrapper {
+    background: #f4f4f5;
+}
+
+.calendar {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    height: 350px;
+    padding: .5em;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.react-calendar {
+    background: rgb(255, 255, 255);
+    border-radius: 10px;
+    padding: 2em;
+    border-radius: 10px;
+    font-family: system-ui;
+    font-size: .7rem;
+}
+
+.react-calendar__tile--now {
+    background: #b6d2d9;
+}
+
+div.react-calendar__navigation {
+    width: 100%;
+    margin: 0 auto; 
+    display: flex;
+}
+
+.react-calendar__navigation button {
+    min-width: 44px;
+    background: none;
+    background: #f3f3f5;
+    font-size: large;
+    color: #53555a;
+    font-weight: bold;
+}
+
+button.react-calendar__navigation__label {
+    font-size: medium;
+    font-weight: 500;;
+}
+
+#root > div > div.task-wrapper > div > div > div.react-calendar__viewContainer > div > div {
+    align-items: stretch;
+}
+
+div.react-calendar__month-view__weekdays {
+    font-size: .7rem;
+}
+
+abbr[title] {
+    text-decoration: none !important;
+}
+div.react-calendar__month-view {
+display: flex;
+justify-content: space-evenly;
+}
+
+.react-calendar__month-view__days__day--weekend {
+    color: #acbee3;
+}
+
+*, *::before, ::after {
+    border-color: var(--chakra-colors-gray-200);
+    /* word-wrap: break-word; */
+}
+.nav {
+    background-color: rgb(202, 226, 226);
+    height: 80px;
+}
+
+.task-wrapper {
+    padding: 2em;
+}
+
+
+.date-picker {
+    display: flex;
+    justify-content: center;
+}
+
+
+.create-wrapper {
+    padding: 2em;
+}
+
+
+  /* .image-upload {
+    height: 170px;
+    width: 170px;
+    border-radius: 50%;
+    box-shadow: rgb(0 0 0 / 16%) 0px 3px 6px, rgb(0 0 0 / 23%) 0px 3px 6px;
+    margin: 100px auto 0px auto;
+    overflow-y: hidden;
+} */
+
+
+.image-upload > input
+{
+    display: none;
+}
+
+.image-upload .img {   
+    cursor: pointer;
+    top: 212px;
+    left: 330px;
+    color: #8dbae8;
+}
+
+
+#talking {
+    filter: invert();
+}
+
+#nav-header {
+font-weight: 800;
+color: #cbcccd;
+}
+
+/* 
+.navi {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+} */
+@media (min-width: 1000px) {
+    .page-content {
+        padding: 1em 3em;
+    }
+    
+}

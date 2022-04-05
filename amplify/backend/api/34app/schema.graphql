@@ -1,0 +1,32 @@
+type User @model @auth(rules: [{allow: owner}]) {
+  id: ID!
+  username: String
+  profilePic: String
+  posts: [Post] @hasMany(indexName: "byUser", fields: ["id"])
+  pair: Pair! @belongsTo(fields: ["pairID"])
+  pairID: ID! @index(name: "byPair", sortKeyFields: ["username"])
+}
+
+type Post @model @auth(rules: [{allow: owner}]) {
+  id: ID!
+  name: String
+  content: String
+  image: String
+  postDate: AWSDateTime
+  user: User! @belongsTo(fields: ["userID"])
+  userID: ID! @index(name: "byUser", sortKeyFields: ["id"])
+  timeline: Timeline! @belongsTo(fields: ["timelineID"])
+  timelineID: ID! @index(name: "byTimeline", sortKeyFields: ["id"])
+}
+
+type Pair @model @auth(rules: [{allow: owner}]) {
+  id: ID!
+  pairedUsers: [User] @hasMany(indexName: "byPair", fields: ["id"])
+  timelineID: ID
+  timeline: Timeline @hasOne(fields: ["timelineID"])
+}
+
+type Timeline @model @auth(rules: [{allow: owner}]) {
+  id: ID!
+  posts: [Post] @hasMany(indexName: "byTimeline", fields: ["id"])
+} 

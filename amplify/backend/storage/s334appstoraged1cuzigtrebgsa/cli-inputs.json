@@ -1,0 +1,12 @@
+{
+  "resourceName": "s334appstoraged1cuzigtrebgsa",
+  "bucketName": "34app-storage-d1cuzigtrebgsa",
+  "policyUUID": "dde1e727",
+  "storageAccess": "auth",
+  "guestAccess": [],
+  "authAccess": [
+    "CREATE_AND_UPDATE",
+    "READ",
+    "DELETE"
+  ]
+}
