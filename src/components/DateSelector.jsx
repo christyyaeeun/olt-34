@@ -1,7 +1,7 @@
 import Calendar from 'react-calendar'
 import { useState } from 'react';
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
+// import DatePicker from "react-datepicker";
+// import "react-datepicker/dist/react-datepicker.css";
 import { Container, Box, IconButton } from '@chakra-ui/react'
 import '../styles/calendar.css'
 // import React, { Component } from 'react'
@@ -30,14 +30,14 @@ function DateSelector() {
 
           <Box shadow='md' bg='#fff' centerContent>
             <Box p={2}>
-              <DatePicker
+              {/* <DatePicker
                 selected={startDate}
                 onChange={onChange}
                 startDate={startDate}
                 endDate={endDate}
                 selectsRange
                 inline
-              />
+              /> */}
             </Box>
             {/* <Box shadow='md' p={2} m={1} h='100px' color='#494b51' bg='fff'>
             <DatePicker selected={startDate} onChange={(date: Date) => setStartDate(date)} />
