@@ -9,7 +9,6 @@ import "./styles/style.css";
 import Layout from './components/Layout';
 import LinkPage from './components/LinkPage';
 import Missing from './pages/Missing';
-import Ap from './pages/Ap'
 import { ChakraProvider } from '@chakra-ui/react'
 import { withAuthenticator } from '@aws-amplify/ui-react'
 
@@ -26,11 +25,11 @@ function App({ signOut, user }) {
         <Route path='/profile' element={<Profile />} />
         <Route path='/themes' element={<Themes />} />
         <Route path='/tasks' element={<Tasks />} />
-        <Route path='/ap' element={<Ap />} />
         <Route path="*" element={<Missing />} />
       </Route>
       </Routes>
       </ChakraProvider>
+      
   );
 }
 

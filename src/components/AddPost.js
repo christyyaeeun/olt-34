@@ -1,44 +1,72 @@
-// import { API } from 'aws-amplify'
-// import * as mutations from '../graphql/mutations'
+import React, { useState } from "react";
 
-// const postDetails = {
-//     title: 'title',
-//     content: 'body',
-//     image: {},
-// };
+import API, { graphqlOperation } from "@aws-amplify/api";
+import { createPost } from "../graphql/mutations";
 
-// const newPost = await API.graphql({ query: mutations.createPost, variables: {input: postDetails}});
-// import React, { useState } from "react";
-import { Button } from '@chakra-ui/react'
-// import { DataStore } from 'aws-amplify';
-const AddPost = ({ id, title, content, image, postDate, handleDeletePost }) => {
-    async function onChange(e) {
-        const file = e.target.files[0];
-        try {
-          await Storage.put(file.name, file, {
-            contentType: "image/png", // contentType is optional
-          });
-        } catch (error) {
-          console.log("Error uploading file: ", error);
-        }
-      }
-      
-      <input type="file" onChange={onChange} />;
-    
-    return (
-		<div className='note'>
-			<span>{title}</span>
-			<div className='note-footer'>
-				<small>{content}</small>
-                {image}  
-                {postDate}
-				<Button	onClick={() => handleDeletePost(id)}
-					className='delete-icon'
-					size='1.3em'
-				/>
-			</div>
-		</div>
-	);
+import { Button, Textarea, Container } from "@chakra-ui/react";
+
+async function createNewPost(data) {
+  const post = {
+    ...data,
+    complete: false
+  };
+  await API.graphql(graphqlOperation(createPost, { input: post }));
+}
+
+const defaultForm = {
+  title: "",
+  content: ""
 };
 
-export default AddPost;
+const CreatePost = () => {
+  const [data, updateData] = useState(defaultForm);
+
+  function handleChange(e) {
+    const target = e.target;
+    e.persist();
+
+    return updateData(values => ({
+      ...values,
+      [target.name]: target.value
+    }));
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    createNewPost(data).then(() => {
+      updateData(defaultForm);
+    });
+  }
+
+  return (
+    <Container>
+      <form onSubmit={handleSubmit}>
+          <Textarea
+            type='text'
+            name='name'
+            label='Task Name'
+            value={data.name}
+            onChange={handleChange}
+            variant='outlined'
+            margin='normal'
+          />
+          <Textarea
+            type='text'
+            name='description'
+            label='Task Description'
+            value={data.description}
+            onChange={handleChange}
+            variant='outlined'
+            margin='normal'
+            multiline
+          />
+
+        <Button type='submit' color='primary' variant='contained'>
+          Create New Post
+        </Button>
+      </form>
+    </Container>
+  );
+};
+
+export default CreatePost;

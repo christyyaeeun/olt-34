@@ -21,7 +21,7 @@ import {
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons'
 import { AmplifySignOut } from '@aws-amplify/ui-react'
 
-const Links = ["Home", "Tasks", "Journal", "Themes", "Ap"];
+const Links = ["Home", "Tasks", "Journal", "Themes"];
 
 const NavLink = ({ children, href }: { children: ReactNode; href: string; }) => (
   <Link

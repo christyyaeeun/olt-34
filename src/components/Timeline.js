@@ -2,14 +2,14 @@ import { useState, useEffect } from 'react'
 import { DataStore } from '@aws-amplify/datastore'
 import { Container } from '@chakra-ui/react'
 
-import { TimelineItem } from './models'
+import { Post } from '../models'
 
 export function Timeline ({ children }) {
   const [timeline, setTimeline] = useState([])
 
   useEffect(() => {
     const getTimeline = async () => {
-      const timelineData = await DataStore.query(TimelineItem)
+      const timelineData = await DataStore.query(Post)
       setTimeline(timelineData)
     }
     getTimeline()

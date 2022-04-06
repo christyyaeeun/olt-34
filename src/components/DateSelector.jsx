@@ -16,12 +16,9 @@ function DateSelector() {
   }
   const [show, setShow] = useState(false);
 
-
   return (
     <>
       <Container centerContent maxW='container.sm'>
-
-
       <IconButton onClick={() => setShow(prev => !prev)}> </IconButton>
           {show && 
           <Box>     
@@ -30,7 +27,6 @@ function DateSelector() {
           </div>
           </Box>
           }
-
 
           <Box shadow='md' bg='#fff' centerContent>
             <Box p={2}>
@@ -46,10 +42,7 @@ function DateSelector() {
             {/* <Box shadow='md' p={2} m={1} h='100px' color='#494b51' bg='fff'>
             <DatePicker selected={startDate} onChange={(date: Date) => setStartDate(date)} />
           </Box> */}
-       
           </Box>
-
-      
       </Container>
     </>
   )

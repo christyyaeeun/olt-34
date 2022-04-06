@@ -5,7 +5,7 @@ import { Storage, API } from 'aws-amplify';
 import { createPost } from '../graphql/mutations';
 import { Input, Container, Box, Stack, Textarea, Button, ButtonGroup, Icon, Image } from '@chakra-ui/react'
 import { BiImageAdd } from 'react-icons/bi'
-import { graphqlOperation } from 'aws-amplify';
+// import { graphqlOperation } from 'aws-amplify';
 /* Initial state to hold form input, saving state */
 const initialState = {
   name: '',
@@ -73,25 +73,17 @@ export default function CreatePost({
       console.log('error: ', err);
     }
   }
-  function onClickCreatePost() {
-    addPost();
-  }
-const addPost = async () => {
-  // const addGameDay = async () => {
-  //   const d = selectedDate;
-  //   const gameDayDateString = [
-  //     d.getFullYear(),
-  //     "-",
-  //     ("0" + (d.getMonth() + 1)).slice(-2),
-  //     "-",
-  //     ("0" + d.getDate()).slice(-2)
-  //   ].join("");
+//   function onClickCreatePost() {
+//     addPost();
+//   }
+// const addPost = async () => {
 
-    await API.graphql(
-      graphqlOperation(createPost, {
-        input: {}
-      })
-    );}
+
+//     await API.graphql(
+//       graphqlOperation(createPost, {
+//         input: {}
+//       })
+//     );}
 
 
 
@@ -120,7 +112,7 @@ const addPost = async () => {
             />)}
       <ButtonGroup pb={3} variant='outline' spacing='6'>
       <Button color='#7599bf' onClick={save}>Save</Button>
-      <Button color='#7599bf' onClick={onClickCreatePost}>Save</Button>
+      {/* <Button color='#7599bf' onClick={onClickCreatePost}>Save</Button> */}
 
         <Button color='#53555a' type="cancel" title="Cancel" onClick={() => updateOverlayVisibility(false)} >cancel</Button>
  </ButtonGroup>
