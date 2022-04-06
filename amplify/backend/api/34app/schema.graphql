@@ -1,4 +1,4 @@
-type User @model @auth(rules: [{allow: owner}]) {
+type User @model @auth(rules: [{ allow: owner }]) {
   id: ID!
   username: String
   profilePic: String
@@ -7,7 +7,7 @@ type User @model @auth(rules: [{allow: owner}]) {
   pairID: ID! @index(name: "byPair", sortKeyFields: ["username"])
 }
 
-type Post @model @auth(rules: [{allow: owner}]) {
+type Post @model @auth(rules: [{ allow: owner }]) {
   id: ID!
   name: String
   content: String
@@ -19,14 +19,17 @@ type Post @model @auth(rules: [{allow: owner}]) {
   timelineID: ID! @index(name: "byTimeline", sortKeyFields: ["id"])
 }
 
-type Pair @model @auth(rules: [{allow: owner}]) {
+type Pair @model @auth(rules: [{ allow: owner }]) {
   id: ID!
   pairedUsers: [User] @hasMany(indexName: "byPair", fields: ["id"])
   timelineID: ID
   timeline: Timeline @hasOne(fields: ["timelineID"])
 }
 
-type Timeline @model @auth(rules: [{allow: owner}]) {
+type Timeline @model @auth(rules: [{ allow: owner }]) {
   id: ID!
-  posts: [Post] @hasMany(indexName: "byTimeline", fields: ["id"])
-} 
+    posts: [Post] @hasMany(indexName: "byTimeline", fields: ["id"])
+
+}
+
+

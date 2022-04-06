@@ -1,45 +1,46 @@
-import React, { useEffect } from "react";
+/* First import the API category from Amplify */
+import { API } from 'aws-amplify';
+/* Next, import the createContact mutation */
+import { createPost } from './graphql/mutations';
+import AuthContext from '../context/AuthContext';
 
-import Amplify, { DataStore, Predicates } from "aws-amplify";
-import { Post } from "../models";
-
-//Use next two lines only if syncing with the cloud
-import awsconfig from "../aws-exports";
-Amplify.configure(awsconfig);
-
-function onCreate() {
-  DataStore.save(
-    new Post({
-      title: `New title ${Date.now()}`,
-      
-    })
-  );
-}
-
-function onDeleteAll() {
-  DataStore.delete(Post, Predicates.ALL);
-}
-
-
+const { user } = useUser();
 
 function OnPost() {
-  useEffect(() => {
-    const subscription = DataStore.observe(Post).subscribe((msg) => {
-      console.log(msg.model, msg.opType, msg.element);
-    });
 
-    return () => subscription.unsubscribe();
-  }, []);
+  /* For a dynamic form, create some local state to hold form input. This is pseudocode and will differ based on your JavaScript framework. */
+  const formState = { title: '', content: '', image: {} };
+
+  /* Create a function to update the form state. This is pseudocode and will differ based on your JavaScript framework.  */
+  function updateFormState(key, value) {
+    formState[key] = value;
+  }
+
+  /* Create a function that will create a new contact */
+  async function submitNewPost() {
+    try {
+      await API.graphql({
+        query: createPost,
+        variables: {
+          input: {
+            title: formState.title,
+            content: formState.content,
+            image: formState.image
+          }
+        }
+      })
+      console.log('New post created!');
+    } catch (err) {
+      console.log({ err });
+    }
+  }
 
   return (
-        <div>
-          <input type="button" value="NEW" onClick={onCreate} />
-          <input type="button" value="DELETE ALL" onClick={onDeleteAll} />
-        </div>
-       
-     
-  
-  );
-}
+    <>
+      <input placeholder="title" onChange={e => updateFormState('title', e.target.value)} />
+      <input placeholder="content" onChange={e => updateFormState('content', e.target.value)} />
+      <button onClick={submitNewPost}>Create New Contact</button>
+    </>
+  )
 
-export default OnPost;
+}

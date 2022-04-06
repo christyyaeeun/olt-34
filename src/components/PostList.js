@@ -53,7 +53,7 @@ const PostList = () => {
 
   return (
     <Container>
-        Your Tasks:
+     
       {state.posts.map((post, i) => (
         <p key={post.id}>
           {post.title} : {post.content}

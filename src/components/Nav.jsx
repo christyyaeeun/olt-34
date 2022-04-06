@@ -100,9 +100,7 @@ export default function Simple() {
               </MenuList>
             </Menu>
           </Flex>
-
         </Flex>
-
         {isOpen ? (
           <Box pb={4} display={{ md: 'none' }}>
             <Stack as={'nav'} spacing={4}>
@@ -112,19 +110,7 @@ export default function Simple() {
             </Stack>
           </Box>
         ) : null}
-
-
-
-
-
-
-
       </Box>
-
-
-
-
-
     </>
   );
 }

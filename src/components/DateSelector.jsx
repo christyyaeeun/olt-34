@@ -6,14 +6,14 @@ import { Container, Box, IconButton } from '@chakra-ui/react'
 import '../styles/calendar.css'
 // import React, { Component } from 'react'
 function DateSelector() {
-  const [startDate, setStartDate] = useState(new Date());
-  const [endDate, setEndDate] = useState(null);
+  // const [startDate, setStartDate] = useState(new Date());
+  // const [endDate, setEndDate] = useState(null);
 
-  const onChange = (dates) => {
-    const [start, end] = dates;
-    setStartDate(start);
-    setEndDate(end);
-  }
+  // const onChange = (dates) => {
+  //   const [start, end] = dates;
+  //   setStartDate(start);
+  //   setEndDate(end);
+  // }
   const [show, setShow] = useState(false);
 
   return (

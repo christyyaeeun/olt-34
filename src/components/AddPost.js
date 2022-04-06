@@ -52,8 +52,11 @@ const CreatePost = () => {
           />
           <Textarea
             type='text'
+            bg='#eff2ff'
+            outline='1px #dadada'
             name='description'
-            label='Task Description'
+            placeholder='add description'
+            label='Description'
             value={data.description}
             onChange={handleChange}
             variant='outlined'
@@ -62,7 +65,7 @@ const CreatePost = () => {
           />
 
         <Button type='submit' color='primary' variant='contained'>
-          Create New Post
+          Save
         </Button>
       </form>
     </Container>

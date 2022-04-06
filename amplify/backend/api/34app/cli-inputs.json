@@ -3,11 +3,12 @@
   "serviceConfiguration": {
     "apiName": "34app",
     "serviceName": "AppSync",
-    "gqlSchemaPath": "/tmp/amplify-e854a0ce-5819-43df-9cb1-5b4bfc3ef2e9/amplify/backend/api/34app/schema.graphql",
+    "gqlSchemaPath": "/Users/christypark/34-app/amplify/backend/api/34app/schema.graphql",
     "defaultAuthType": {
       "mode": "API_KEY",
-      "keyDescription": "api key description",
-      "expirationTime": 30
+      "expirationTime": 30,
+      "apiKeyExpirationDate": "2022-05-06T17:28:39.162Z",
+      "keyDescription": "test"
     },
     "conflictResolution": {
       "defaultResolutionStrategy": {
